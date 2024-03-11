@@ -4,9 +4,11 @@ import Home from './pages/Home/'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Survey from './pages/Survey'
-import Header from './pages/Header'
-import ClientForm from './components/ClientForm'
-import FreelanceForm from './components/FreelanceForm'
+import Header from './Components/Header'
+import ClientForm from './Components/ClientForm'
+import FreelanceForm from './Components/FreelanceForm'
+import Error from './Components/Error'
+import Freelances from './pages/Freelances'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
@@ -16,6 +18,8 @@ root.render(
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/survey/:questionNumber' element={<Survey />} />
+        <Route path='*' element={<Error />} />
+        <Route path="/freelances" element={<Freelances />} />
         <Route path='/client' element={<ClientForm />} />
         <Route path='/freelance' element={<FreelanceForm />} />
       </Routes>
